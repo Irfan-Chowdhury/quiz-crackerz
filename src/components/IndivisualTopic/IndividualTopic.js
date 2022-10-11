@@ -10,7 +10,7 @@ const IndividualTopic = ({topic}) => {
                 <div className="card-body">
                     <div className="d-flex justify-content-between">
                         <div>
-                            <h5>{name}</h5>
+                            <h5>{name} ({total})</h5>
                         </div>
                         <div>
                             <button className="btn btn-primary">Start Practice</button>
