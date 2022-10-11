@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 
 import React from 'react';
 import Option from '../Option/Option';
@@ -11,6 +13,7 @@ const Questions = ({questionItems, increment, key}) => {
                 <div className="mb-3 d-flex justify-content-evenly">
                     <div></div>
                     <div><h5>Quiz-{increment}: {question.replace(/(<([^>]+)>)/ig, '')}</h5></div>
+                    <div><FontAwesomeIcon icon={faEye}></FontAwesomeIcon> </div>
                 </div>
                 <div className="row">
                     {
