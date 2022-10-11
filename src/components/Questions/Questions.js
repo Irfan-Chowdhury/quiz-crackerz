@@ -1,11 +1,27 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 
-import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Modal, Button } from "react-bootstrap";
+
+import React, { useState } from 'react';
 import Option from '../Option/Option';
 
-const Questions = ({questionItems, increment, key}) => {
-    const {id, question, options,correctAnswer} = questionItems;
+const Questions = ({ questionItems, increment, key }) => {
+    const { id, question, options, correctAnswer } = questionItems;
+
+    const [showModal, setShow] = useState(false);
+    const [showCorrectAnswer, setCorrectAnswer] = useState('');
+
+
+    const handleClose = () => setShow(false);
+    const handleCorrectAnswer = (correctAnswer) => {
+        setShow(true);
+        setCorrectAnswer(correctAnswer)
+        // toast("Wow so easy!");
+    }
+
 
     return (
         <div className="card mt-5">
@@ -13,7 +29,9 @@ const Questions = ({questionItems, increment, key}) => {
                 <div className="mb-3 d-flex justify-content-evenly">
                     <div></div>
                     <div><h5>Quiz-{increment}: {question.replace(/(<([^>]+)>)/ig, '')}</h5></div>
-                    <div><FontAwesomeIcon icon={faEye}></FontAwesomeIcon> </div>
+                    <div onClick={() => handleCorrectAnswer(correctAnswer)}>
+                        <FontAwesomeIcon icon={faEye}></FontAwesomeIcon>
+                        <ToastContainer></ToastContainer> </div>
                 </div>
                 <div className="row">
                     {
@@ -21,6 +39,16 @@ const Questions = ({questionItems, increment, key}) => {
                     }
                 </div>
             </div>
+
+            {/* Show Correct Answer Modal */}
+            <Modal show={showModal} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Correct Answer is: </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>{showCorrectAnswer.replace(/(<([^>]+)>)/ig, '')}</Modal.Body>
+                <Modal.Footer></Modal.Footer>
+            </Modal>
+
         </div>
     );
 };
