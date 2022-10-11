@@ -4,7 +4,7 @@ import Questions from '../Questions/Questions';
 
 const Quiz = () => {
     const quizInfo = useLoaderData();
-    const {name, total, logo, questions} = quizInfo.data;
+    const {id, name, total, logo, questions} = quizInfo.data;
     let increment = 1;
 
     return (
@@ -21,7 +21,7 @@ const Quiz = () => {
             <br />
             
             {
-                questions.map(questionItems => <Questions increment={increment++} questionItems={questionItems} ></Questions>)
+                questions.map(questionItems => <Questions key={id} increment={increment++} questionItems={questionItems} ></Questions>)
             }
 
         </div>

@@ -35,7 +35,7 @@ const Questions = ({ questionItems, increment, key }) => {
                 </div>
                 <div className="row">
                     {
-                        options.map(option => <Option id={id} option={option}></Option>)
+                        options.map(option => <Option id={id} option={option} correctAnswer={correctAnswer}></Option>)
                     }
                 </div>
             </div>
