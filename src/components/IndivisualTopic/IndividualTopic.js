@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const IndividualTopic = ({topic}) => {
     const {id, name, logo, total} = topic;
-    console.log(topic);
     return (
         <div className="col">
             <div className="card">
@@ -13,7 +13,7 @@ const IndividualTopic = ({topic}) => {
                             <h5>{name} ({total})</h5>
                         </div>
                         <div>
-                            <button className="btn btn-primary">Start Practice</button>
+                            <Link to={`/quiz/${id}`} className="btn btn-primary">Start Practice</Link>
                         </div>
                     </div>
                 </div>
