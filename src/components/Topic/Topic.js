@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import QuizTopic from '../QuizTopic/QuizTopic';
+import IndividualTopic from '../IndivisualTopic/IndividualTopic';
 
 const Topic = () => {
     const quiz = useLoaderData();
@@ -23,13 +23,12 @@ const Topic = () => {
                 <div className="container mb-5">
                     <div className="row row-cols-1 row-cols-md-4 g-4">
                         {
-                            topics.map( topic => <QuizTopic></QuizTopic> )
+                            topics.map( topic => <IndividualTopic topic={topic}></IndividualTopic> )
                         }
                         
                     </div> 
                 </div>
             </section>
-            <h1>This is topic</h1>
         </div>
     );
 };

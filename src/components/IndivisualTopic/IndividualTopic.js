@@ -1,14 +1,16 @@
 import React from 'react';
 
-const QuizTopic = () => {
+const IndividualTopic = ({topic}) => {
+    const {id, name, logo, total} = topic;
+    console.log(topic);
     return (
         <div className="col">
             <div className="card">
-                <img src="https://reactjs.org/logo-og.png" alt=""/>
+                <img src={logo} alt=""/>
                 <div className="card-body">
                     <div className="d-flex justify-content-between">
                         <div>
-                            <p>React</p>
+                            <h5>{name}</h5>
                         </div>
                         <div>
                             <button className="btn btn-primary">Start Practice</button>
@@ -20,4 +22,4 @@ const QuizTopic = () => {
     );
 };
 
-export default QuizTopic;
+export default IndividualTopic;
