@@ -15,7 +15,7 @@ const Option = ({option, id, correctAnswer}) => {
     }
 
     return (
-        <div className="col-md-6 card mb-2">
+        <div className="col-md-6 card mb-2 bg-info">
             <div className="card-body">
                 <div className="form-check text-start">
                     <input className="form-check-input" type="radio" onClick={() => handleResult(optionTitle)} name={id} />

@@ -19,10 +19,15 @@ const Quiz = () => {
             </section>
 
             <br />
-            
-            {
-                questions.map(questionItems => <Questions key={id} increment={increment++} questionItems={questionItems} ></Questions>)
-            }
+
+                {
+                        questions.map(questionItems => <Questions key={id} increment={increment++} questionItems={questionItems} ></Questions>)
+                    }
+            {/* <div className='row'>
+                <div className="col-md-9">            
+                    
+                </div>
+            </div> */}
 
         </div>
     );

@@ -1,3 +1,15 @@
-.header{
-    background: aqua;
+ul a{
+    text-decoration: none;
+    margin-right: 15px;
+    padding: 2px 5px;
+}
+
+
+ul li a:hover{
+    background-color: lightblue;
+}
+
+.active{
+    background-color: aquamarine;
+    color:black;
 }
