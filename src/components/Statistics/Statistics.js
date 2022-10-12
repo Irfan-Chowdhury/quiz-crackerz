@@ -8,14 +8,19 @@ const Statistics = () => {
 
     return (
         <div className='container'>
-            <h1>Statistics</h1>
-            <br />
-            <LineChart width={500} height={400} data={topics}>
-                <Line type="monotone" dataKey="total" stroke="#82ca9d" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip></Tooltip>
-            </LineChart>
+            <div className="card mt-3">
+                <div className="card-body">
+                    <h1>Statistics</h1>
+                    <br />
+                    <LineChart width={500} height={400} data={topics}>
+                        <Line type="monotone" dataKey="total" stroke="#82ca9d" />
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <Tooltip></Tooltip>
+                    </LineChart>
+                </div>
+            </div>
+
         </div>
     );
 };

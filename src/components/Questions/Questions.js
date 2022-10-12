@@ -8,7 +8,7 @@ import { Modal, Button } from "react-bootstrap";
 import React, { useState } from 'react';
 import Option from '../Option/Option';
 
-const Questions = ({ questionItems, increment, key }) => {
+const Questions = ({ questionItems, sl_no, handleResult }) => {
     const { id, question, options, correctAnswer } = questionItems;
 
     const [showModal, setShow] = useState(false);
@@ -19,23 +19,22 @@ const Questions = ({ questionItems, increment, key }) => {
     const handleCorrectAnswer = (correctAnswer) => {
         setShow(true);
         setCorrectAnswer(correctAnswer)
-        // toast("Wow so easy!");
     }
 
-
+    
     return (
         <div className="card mt-5">
             <div className="card-body">
                 <div className="mb-3 d-flex justify-content-evenly">
                     <div></div>
-                    <div><h5>Quiz-{increment}: {question.replace(/(<([^>]+)>)/ig, '')}</h5></div>
+                    <div><h5>Quiz-{sl_no}: {question.replace(/(<([^>]+)>)/ig, '')}</h5></div>
                     <div onClick={() => handleCorrectAnswer(correctAnswer)}>
                         <FontAwesomeIcon icon={faEye}></FontAwesomeIcon>
                         <ToastContainer></ToastContainer> </div>
                 </div>
                 <div className="row">
                     {
-                        options.map(option => <Option id={id} option={option} correctAnswer={correctAnswer}></Option>)
+                        options.map(option => <Option id={id} option={option} handleResult={handleResult} correctAnswer={correctAnswer}></Option>)
                     }
                 </div>
             </div>
