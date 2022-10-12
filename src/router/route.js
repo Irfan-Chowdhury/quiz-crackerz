@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../components/Blog/Blog";
+import NotFound404 from "../components/NotFound404/NotFound404";
 import Quiz from "../components/Quiz/Quiz";
 import Statistics from "../components/Statistics/Statistics";
 import Topic from "../components/Topic/Topic";
@@ -35,6 +36,6 @@ export const router = createBrowserRouter([
     },
     { 
         path: '*', 
-        element: <div>404 | This route is not found</div>
+        element: <NotFound404></NotFound404>
     }
   ]);
